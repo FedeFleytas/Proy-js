@@ -95,3 +95,10 @@ if (carrito.length === 0) {
     }
 
 }
+
+let precioTotal = 0 
+for (let producto of carrito) {
+    precioTotal += producto.precio
+}
+
+alert(`El total de su compra es de: $${precioTotal}`)
