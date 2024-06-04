@@ -1,0 +1,180 @@
+
+.containeer {
+    padding: 50px 0;
+    text-align: center;
+    transition: transform .5s;
+
+    .cont-gen {
+        padding: 50px 0;
+        text-align: center;
+        .genero-i {
+            font-family: $fuente-name;
+            font-size: $size-fuente-p;
+            font-style: $estilo-fuente-p;
+            color: map-get($map: $paleta, $key: "primario");
+            line-height: 0.1rem;
+            border-bottom: 2px dashed saturate($intel-tittle, $amount: 100%);
+            padding-top: 2rem;
+            @media only screen and (min-width : 320px) and (max-width : 993px) {
+                font-size: $size-fuente-s;
+            }
+            .bg-gen {
+                padding: 0 1rem;
+                background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTMyYWhjZWpiMGExYmFnd202OHFxbngwcjh0NXA5bnhwdjgxeWI3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xVn3ZmKrKIOLS/giphy.gif);
+                text-shadow: 1px 1px 14px $intel-tittle;
+
+                
+            }
+        }
+        .genero-a {
+            font-family: $fuente-name;
+            font-size: $size-fuente-p;
+            font-style: $estilo-fuente-p;
+            color: map-get($map: $paleta, $key: "primario");
+            line-height: 0.1rem;
+            border-top: 2px dashed saturate($amd-tittle, $amount: 100%);
+            padding-top: 0.1rem;
+            @media only screen and (min-width : 320px) and (max-width : 993px) {
+                font-size: $size-fuente-s;
+            }
+            .bg-gen {
+                padding: 0 1rem;
+                background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTMyYWhjZWpiMGExYmFnd202OHFxbngwcjh0NXA5bnhwdjgxeWI3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xVn3ZmKrKIOLS/giphy.gif);
+                border: 2px ca lighten($amd-tittle, $amount: 10%);
+                text-shadow: 1px 1px 14px $amd-tittle;
+
+            }
+        }
+    }
+    .genero-line-i {
+        display: block;
+        line-height: 0.1rem;
+        border-radius: 60px;
+        border-bottom: 2px dashed saturate($intel-tittle, $amount: 100%);
+        padding-top: 2rem;
+    }
+    
+    .genero-line-a {
+        display: block;
+        line-height: 0.1rem;
+        border-radius: 60px;
+        border-bottom: 2px dashed saturate($amd-tittle, $amount: 100%);
+        padding-top: 2rem;
+    }
+
+    .prod {
+        @extend %flex-center;
+        padding: 50px 0;
+        text-align: center;
+        .proc-conte {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+
+            @media only screen and (min-width: 993px) and (max-width : 1386px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+
+            @media only screen and (min-width : 320px) and (max-width : 993px) {
+                grid-template-columns: repeat(1, 2fr);
+                gap: 50px;
+            }
+
+            .prode {
+                text-align: center;
+                padding: 30px;
+                width: 410px;
+                cursor: pointer;
+                @media only screen and (min-width: 993px) and (max-width : 1383px) {
+                    width: 390px;
+                    height: auto;
+                }
+
+                @media only screen and (max-width : 830px) and (min-width: 433px) {
+                    width: 360px;
+                }
+
+                @media only screen and (max-width: 433px) {
+                    width: 260px;
+                }
+
+                .fotoo {
+                    width: 350px;
+                    height: 350px;
+                    margin-bottom: 20px;
+                    filter: drop-shadow(0px 0px 10px map-get($map: $paleta, $key: "primario"));
+
+                    &:hover {
+                        transform: scale(1.09);
+                        transition: 1s;
+                        border-radius: 10px;
+                    }
+
+                    @media only screen and (min-width: 993px) and (max-width : 1386px) {
+                        width: 330px;
+                        height: 330px;
+                    }
+
+                    @media only screen and (max-width : 830px) and (min-width: 433px) {
+                        width: 300px;
+                        height: 300px;
+                    }
+
+                    @media only screen and (max-width: 433px) {
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+
+                .prod-txt {
+                    height: 150px;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    border-left: 1px solid map-get($map: $paleta, $key: "secundario");
+                    border-right: 1px solid map-get($map: $paleta, $key: "secundario");
+                    .prod-name {
+                        font-family: $fuente-principal;
+                        font-size: $size-fuente-s;
+                        text-align: center;
+                        color: map-get($map: $paleta, $key: "primario");
+                        @media only screen and (min-width : 320px) and (max-width : 993px) {
+                            font-size: $size-fuente-cel;
+                        }
+                    }
+                    .precc {
+                        filter: drop-shadow(0px 0px 10px map-get($map: $paleta, $key: "secundario"));
+                        text-align: center;
+                        @extend %txtsec;
+                        color: map-get($map: $paleta, $key: "secundario");
+                    }
+                }
+                .press {
+                    font-family: $fuente-principal;
+                    font-size: 18px;
+                    background-color: transparent;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    border: 1px solid map-get($map: $paleta, $key: "secundario");
+                    color: map-get($map: $paleta, $key: "primario");
+                    position: relative;
+                    bottom: 40px;
+
+                    &:hover {
+                        filter: drop-shadow(0px 0px 20px map-get($map: $paleta, $key: "secundario"));
+                        color: black;
+                        background-color: map-get($map: $paleta, $key: "secundario");
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mostrarCarrito {
+    .containeer {
+        transform: translate3d(-250px);
+    }
+}

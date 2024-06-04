@@ -1,0 +1,32 @@
+
+
+%h-f {
+    border-top: 2px solid #00A676;
+    border-bottom: 2px solid #00A676;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%boxborder {
+    border-left: 2px solid #00A676;
+    border-bottom: 2px solid #00A676;
+    border-right: 2px solid #00A676;
+    border-radius: 0px 0px 5px 5px;
+}
+
+%textprim {
+    font-family: "Montserrat";
+    font-size: 35px;
+    font-style: 500;
+}
+
+%txtsec {
+    font-family: "Montserrat";
+    font-size: 25px;
+    font-style: 300;
+}
+

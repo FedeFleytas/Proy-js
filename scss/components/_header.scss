@@ -1,0 +1,310 @@
+
+// fondo pagina //
+body {
+    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTMyYWhjZWpiMGExYmFnd202OHFxbngwcjh0NXA5bnhwdjgxeWI3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xVn3ZmKrKIOLS/giphy.gif);
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+// fin fondo pagina
+
+//header//
+header {
+    background-color:  map-get($map: $paleta, $key: "fondos");
+    @extend %h-f;
+    .naver {
+        background-color: map-get($map: $paleta, $key: "fondos");
+        @media only screen and (min-width : 993px) {
+            background-color: map-get($map: $paleta, $key: "fondos");
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+
+            @media only screen and (min-width: 993px) {
+                &:hover {
+                    transform: rotate(-360deg);
+                    transition: 1s;
+                }
+            }
+
+            @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    width: 60px;
+                    height: 60px;
+            }
+        }
+
+        .name {
+            margin-right: 0 !important;
+            color: map-get($map: $paleta, $key: "primario");
+            font-family: "atmo", sans-serif;
+            font-size: $size-fuente-name;
+            text-shadow: $shadow;
+
+            &::first-letter {
+                color: map-get($map: $paleta, $key: "secundario");
+                font-size: $size-fuente-fletter;
+                font-stretch: $stretch;
+            }
+
+            &:hover {
+                color: map-get($map: $paleta, $key: "secundario");
+
+            }
+
+            @media only screen and (min-width : 993px) {
+                padding-left: 20px;
+            }
+
+            @media only screen and (min-width: 320px) and (max-width: 993px) {
+                font-size: $size-fuente-cel;
+                text-shadow: $shadow;
+                &::first-letter {
+                    font-size: $size-fuente-p;
+
+                }
+            }
+            
+        }
+
+        .navbar-toggler {
+            @media only screen and (min-width : 320px) and (max-width : 993px){
+                border:  map-get($map: $paleta, $key: "secundario");
+            }
+        }
+
+        .navbar-toggler-icon {
+
+            @media only screen and (min-width: 320px) and (max-width: 993px) {
+
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,166,118, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+                
+            }
+        }
+
+        .navitems {
+            color: map-get($map: $paleta, $key: "primario");
+            background-color: map-get($map: $paleta, $key: "fondos");
+
+            @media only screen and (min-width: 993px) {
+                justify-content: right;
+                font-size: $size-fuente-s;
+                background-color: map-get($map: $paleta, $key: "fondos");
+            }
+
+            @media only screen and (min-width : 320px) and (max-width : 993px) {
+                justify-content: right;
+                font-size: $size-fuente-cel;
+            }
+
+            .navname {
+                color:map-get($map: $paleta, $key: "primario") !important;
+                font-family: $fuente-principal;
+                font-style: $estilo-fuente-p;
+                font-size: $size-fuente-s;
+                &:hover {
+                    color:  map-get($map: $paleta, $key: "secundario") !important;
+                }
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    font-family: $fuente-principal;
+                    font-style: $estilo-fuente-p;
+                    font-size: $size-fuente-cel;
+                }
+            }
+
+
+            .listw {
+                &:hover {
+                    color:  map-get($map: $paleta, $key: "secundario");
+                }
+            }
+
+            .cuadro {
+                border: $borders;
+            }
+        }
+
+
+
+
+        // Carrito
+
+
+
+        .carritocontainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .carrito {
+                width: 70px;
+                height: 50px;
+                filter: drop-shadow(0px 0px 2px map-get($map: $paleta, $key: "secundario"));
+            }
+
+            .cantidad {
+                height: 30px;
+                width: 30px;
+                color: map-get($map: $paleta, $key: "primario");
+                font-family: $fuente-principal;
+                font-size: $size-fuente-cel;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: black;
+                border: 1px solid map-get($map: $paleta, $key: "secundario");
+                position: relative;
+                right: 25px;
+                bottom: 5px;
+            }
+        }
+    }
+}
+
+// fin header //
+
+
+// Carrito // 
+
+body {
+    .cartTab {
+        width: 450px;
+        background-color:  map-get($map: $paleta, $key: "fondos");
+        border: 2px solid map-get($map: $paleta, $key: "secundario");
+        color: map-get($map: $paleta, $key: "primario");
+        position: fixed;
+        inset: 0 -600px 0 auto;
+        display: grid;
+        grid-template-rows:  70px 1fr 30px 70px;
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-weight: 300;
+            font-family: $fuente-principal;
+            font-style: $estilo-fuente-p;
+            border-bottom: 2px dashed map-get($map: $paleta, $key: 'secundario');
+        }
+        .listCart {
+            overflow: auto;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+            .item {
+                display: grid;
+                grid-template-columns: 70px 150px 50px 1fr;
+                gap: 10px;
+                text-align: center;
+                align-items: center;
+                border-bottom: 2px dashed map-get($map: $paleta, $key: 'secundario');
+                &:nth-child(even){
+                    background-color: #eee1;
+                }
+                .images {
+                    img {
+                        width: 100%;
+                        filter: contrast(white);
+                    }
+                }
+            }
+            .name {
+                p {
+
+                }
+            }
+            .totalPrecio {
+                p {
+                    text-align: center;
+                }
+            }
+            .cantidades {
+                span {
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    background-color: rgb(169, 169, 169);
+                    color: map-get($map: $paleta, $key: "secundario");
+                    border-radius: 50%;
+                    cursor: pointer;
+                    &:nth-child(2){
+                        background-color: transparent;
+                        color: #eee;
+                    }
+                }
+                .menos {
+                    background-color: black;
+                    &:hover {
+                        border: 1px solid map-get($map: $paleta, $key: "secundario");
+                    }
+                }
+                .mas {
+                    background-color: black;
+                    &:hover {
+                        border: 1px solid map-get($map: $paleta, $key: "secundario");
+                    }
+                }
+                .cant {
+                    font-family: $fuente-principal;
+                    font-size: 15px;
+                }
+            }
+        }
+        .total {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            color: map-get($map: $paleta, $key: 'primario');
+            border-top: 2px dashed map-get($map: $paleta, $key: 'secundario');
+            p{
+                font-family: $fuente-principal;
+                font-style: $estilo-fuente-p;
+            }
+            .titu {
+                
+            }
+            .totall {
+
+            }
+        }
+        .btns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            button {
+                border: none;
+                font-family: $fuente-principal;
+                font-style: $estilo-fuente-p;
+                font-weight: 500;
+                cursor: pointer;
+            }
+            .cerrar {
+                background-color: rgb(77, 77, 77);
+                color: map-get($map: $paleta, $key: "primario");
+                &:hover {
+                    border: 2px solid map-get($map: $paleta, $key: "secundario");
+                }
+            }
+            .finish {
+                background-color: map-get($map: $paleta, $key: "secundario");
+                &:hover {
+                    border: 2px solid map-get($map: $paleta, $key: "primario");
+                }
+            }
+        }
+    }
+}
+.mostrarcarrito {
+    .cartTab {
+        inset: 103px 0 0 auto;
+    }
+}
+
+
+
