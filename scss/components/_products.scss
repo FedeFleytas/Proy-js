@@ -178,3 +178,16 @@
         transform: translate3d(-250px);
     }
 }
+
+
+.swal2-show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color-principal !important;
+    color: map-get($map: $paleta, $key: "primario");
+
+    .swal2-timer-progress-bar {
+        background-color: map-get($map: $paleta, $key: "secundario");
+    }
+}

@@ -6,53 +6,7 @@ let listCartHTML = document.querySelector('.listCart')
 let iconoCartSpan = document.querySelector('.carritocontainer p')
 let totally = document.querySelector('.totally')
 
-
-
-const listaProdctos = [
-    {
-        "id": 1,
-        "name": "Procesador AMD Ryzen 3 3200g",
-        "price": 167821,
-        "image": "images/procesadores/amd-ryzen-3-3200g.png"
-    },
-
-    {
-        "id": 2,
-        "name": "GeForce RTX 4060 Ti 8Gb Msi Ventus 3X Oc",
-        "price": 760569,
-        "image": "images/placasdevideo/GeForce-RTX-4060-Ti-8Gb-Msi-Ventus-3X-Oc.png"
-    },
-
-    {
-        "id": 3,
-        "name": "Asrock AMD Radeon RX 550 2gb",
-        "price": 157395,
-        "image": "images/placasdevideo/asrock-radeon-rx-550-2gb.png"
-    },
-
-    {
-        "id": 4,
-        "name": "Procesador Intel Core i7 13700f",
-        "price": 749000,
-        "image": "images/procesadores/intel-core-i7-13700f.png"
-    },
-
-    {
-        "id": 5,
-        "name": "Procesador intel core i9 14900k",
-        "price": 1848500,
-        "image": "images/procesadores/intel_core_i9_14900k.png"
-    },
-
-    {
-        "id": 6,
-        "name": "PNY Geforce RTX 4070 12gb",
-        "price": 1658586,
-        "image": "images/placasdevideo/pny-geforce-rtx-4070-12gb.png"
-    }
-]
-
-let listProduct = []
+let listaProduct = []
 
 let carrito = []
 
@@ -68,8 +22,8 @@ cerrar.addEventListener('click', () => {
 
 const AgregarHTML = () => {
     listaProductHTML.innerHTML = '';
-    if (listaProdctos.length > 0) {
-        listaProdctos.forEach(product => {
+    if (listaProduct.length > 0) {
+        listaProduct.forEach(product => {
         let newProduct = document.createElement('div');
         newProduct.classList.add('prode');
         newProduct.dataset.id = product.id;
@@ -101,6 +55,7 @@ listaProductHTML.addEventListener('click', (event) => {
 
 const finalizar = document.getElementById('btnFin')
 
+
 finalizar.addEventListener('click', () => {
     carrito = []
     AgregarcarritoHTML()
@@ -109,12 +64,13 @@ finalizar.addEventListener('click', () => {
     body.classList.toggle('mostrarcarrito')
 })
 
+
 const sweetAlert = () => {
     Swal.fire({
         title: '¡Compra realizada con exito!',
         text: '¡Vuelva pronto!',
-        icon: 'success',
-        confirmButtonText: 'Salir'
+        confirmButtonText: 'Salir',
+        customClass: 'swal-padding-width'
     })
 }
 
@@ -149,14 +105,14 @@ const addCart = (idproduct) => {
         }
     });
     Toast.fire({
-        icon: "success",
-        title: "Agregado con exito"
+        title: "Agregado con exito",
     });
 
     AgregarcarritoHTML()
     addCartMemory ()
 
 }
+
 const addCartMemory = () => {
     localStorage.setItem ('carrito', JSON.stringify(carrito))
 }
@@ -172,8 +128,8 @@ const AgregarcarritoHTML = () => {
             let newCarrrito = document.createElement('div')
             newCarrrito.classList.add('item')
             newCarrrito.dataset.id = carrito.idproduct
-            let positionProdcto = listaProdctos.findIndex((value) => value.id == carrito.idproduct)
-            let info = listaProdctos[positionProdcto]
+            let positionProdcto = listaProduct.findIndex((value) => value.id == carrito.idproduct)
+            let info = listaProduct[positionProdcto]
             totalPrice += carrito.quantity * info.price
             newCarrrito.innerHTML = `
             <div class="images">
@@ -186,9 +142,9 @@ const AgregarcarritoHTML = () => {
                 <p>$${info.price * carrito.quantity}</p>
             </div>
             <div class="cantidades">
-                <span class="menos"><</span>
+                <span class="menos">-</span>
                 <span class="cant">${carrito.quantity}</span>
-                <span class="mas">></span>
+                <span class="mas">+</span>
             </div>
             ` 
             listCartHTML.appendChild(newCarrrito)
@@ -213,6 +169,7 @@ listCartHTML.addEventListener('click', (event) => {
     }
 })
 
+
 const changeQuantity = (product_id, type) => {
     let positionItemCart = carrito.findIndex((value) => value.idproduct == product_id)
     if (positionItemCart >= 0) {
@@ -235,13 +192,21 @@ const changeQuantity = (product_id, type) => {
     AgregarcarritoHTML()
 }
 
-
-
 const initLS = () => {
     if (localStorage.getItem('carrito')) {
-        carrito = JSON.parse(localStorage.getItem('carrito'))
-        AgregarcarritoHTML()
+        carrito = JSON.parse(localStorage.getItem('carrito'));
+        AgregarcarritoHTML();
     }
-}
+};
 
-initLS()
+const initApp = () => {
+    fetch('js/products.json')
+    .then(response => response.json())
+    .then(data => {
+        listaProduct = data;
+        AgregarHTML();
+        initLS();
+    });
+};
+
+initApp();

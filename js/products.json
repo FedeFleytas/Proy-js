@@ -1,0 +1,43 @@
+[
+        {
+            "id": 1,
+            "name": "Procesador AMD Ryzen 3 3200g",
+            "price": 167821,
+            "image": "images/procesadores/amd-ryzen-3-3200g.png"
+        },
+
+        {
+            "id": 2,
+            "name": "GeForce RTX 4060 Ti 8Gb Msi Ventus 3X Oc",
+            "price": 760569,
+            "image": "images/placasdevideo/GeForce-RTX-4060-Ti-8Gb-Msi-Ventus-3X-Oc.png"
+        },
+
+        {
+            "id": 3,
+            "name": "Asrock AMD Radeon RX 550 2gb",
+            "price": 157395,
+            "image": "images/placasdevideo/asrock-radeon-rx-550-2gb.png"
+        },
+
+        {
+            "id": 4,
+            "name": "Procesador Intel Core i7 13700f",
+            "price": 749000,
+            "image": "images/procesadores/intel-core-i7-13700f.png"
+        },
+
+        {
+            "id": 5,
+            "name": "Procesador intel core i9 14900k",
+            "price": 1848500,
+            "image": "images/procesadores/intel_core_i9_14900k.png"
+        },
+
+        {
+            "id": 6,
+            "name": "PNY Geforce RTX 4070 12gb",
+            "price": 1658586,
+            "image": "images/placasdevideo/pny-geforce-rtx-4070-12gb.png"
+        }
+]

@@ -137,12 +137,18 @@ header .naver .navitems .cuadro {
 header .naver .carritocontainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 header .naver .carritocontainer .carrito {
   width: 70px;
   height: 50px;
   filter: drop-shadow(0px 0px 2px #00A676);
+}
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  header .naver .carritocontainer .carrito {
+    width: 50px;
+    height: 30px;
+  }
 }
 header .naver .carritocontainer .cantidad {
   height: 30px;
@@ -160,6 +166,16 @@ header .naver .carritocontainer .cantidad {
   right: 25px;
   bottom: 5px;
 }
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  header .naver .carritocontainer .cantidad {
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
 
 body .cartTab {
   width: 450px;
@@ -170,6 +186,11 @@ body .cartTab {
   inset: 0 -600px 0 auto;
   display: grid;
   grid-template-rows: 70px 1fr 30px 70px;
+}
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab {
+    width: 300px;
+  }
 }
 body .cartTab h1 {
   display: flex;
@@ -196,13 +217,32 @@ body .cartTab .listCart .item {
   text-align: center;
   align-items: center;
   border-bottom: 2px dashed #00A676;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 body .cartTab .listCart .item:nth-child(even) {
   background-color: rgba(238, 238, 238, 0.0666666667);
 }
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .listCart .item {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 body .cartTab .listCart .item .images img {
   width: 100%;
   filter: contrast(white);
+}
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .listCart .name {
+    width: 80px;
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .listCart .totalPrecio {
+    width: 80px;
+    font-size: 12px;
+  }
 }
 body .cartTab .listCart .totalPrecio p {
   text-align: center;
@@ -232,6 +272,11 @@ body .cartTab .listCart .cantidades .mas {
 body .cartTab .listCart .cantidades .mas:hover {
   border: 1px solid #00A676;
 }
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .listCart .cantidades .mas {
+    margin-bottom: 10px;
+  }
+}
 body .cartTab .listCart .cantidades .cant {
   font-family: "Montserrat";
   font-size: 15px;
@@ -249,6 +294,22 @@ body .cartTab .total p {
   font-family: "Montserrat";
   font-style: 500;
 }
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .total .titu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .total .totall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+  }
+}
 body .cartTab .btns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -259,6 +320,11 @@ body .cartTab .btns button {
   font-style: 500;
   font-weight: 500;
   cursor: pointer;
+}
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+  body .cartTab .btns button {
+    font-size: 15px;
+  }
 }
 body .cartTab .btns .cerrar {
   background-color: rgb(77, 77, 77);
@@ -276,6 +342,15 @@ body .cartTab .btns .finish:hover {
 
 .mostrarcarrito .cartTab {
   inset: 103px 0 0 auto;
+}
+
+.swal-padding-width {
+  background-color: #1d201f;
+  color: #DDD5D0;
+  border: 2px outset #00A676;
+}
+.swal-padding-width .swal2-styled {
+  background-color: #00A676;
 }
 
 .containeer {
@@ -456,6 +531,17 @@ body .cartTab .btns .finish:hover {
 
 .mostrarCarrito .containeer {
   transform: translate3d(-250px);
+}
+
+.swal2-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d201f !important;
+  color: #DDD5D0;
+}
+.swal2-show .swal2-timer-progress-bar {
+  background-color: #00A676;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -136,11 +136,15 @@ header {
         .carritocontainer {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: left;
             .carrito {
                 width: 70px;
                 height: 50px;
-                filter: drop-shadow(0px 0px 2px map-get($map: $paleta, $key: "secundario"));
+                filter: drop-shadow(0px 0px 2px map-get($map: $paleta, $key: "secundario")); 
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    width: 50px;
+                    height: 30px;
+                }
             }
 
             .cantidad {
@@ -158,6 +162,14 @@ header {
                 position: relative;
                 right: 25px;
                 bottom: 5px;
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    width: 20px;
+                    height: 20px;
+                    right: 20px;
+                    bottom: 5px;
+                    font-size: 15px;
+                    font-weight: 500;
+                }
             }
         }
     }
@@ -178,6 +190,9 @@ body {
         inset: 0 -600px 0 auto;
         display: grid;
         grid-template-rows:  70px 1fr 30px 70px;
+        @media only screen and (min-width : 320px) and (max-width : 993px) {
+                width: 300px;
+        }
         h1 {
             display: flex;
             justify-content: center;
@@ -205,6 +220,11 @@ body {
                 &:nth-child(even){
                     background-color: #eee1;
                 }
+                margin-top: 10px;
+                margin-bottom: 10px;
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
                 .images {
                     img {
                         width: 100%;
@@ -213,11 +233,19 @@ body {
                 }
             }
             .name {
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    width: 80px;
+                    font-size: 12px;
+            }
                 p {
 
                 }
             }
             .totalPrecio {
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    width: 80px;
+                    font-size: 12px;
+            }
                 p {
                     text-align: center;
                 }
@@ -241,11 +269,17 @@ body {
                     &:hover {
                         border: 1px solid map-get($map: $paleta, $key: "secundario");
                     }
+                    @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    
+                    }
                 }
                 .mas {
                     background-color: black;
                     &:hover {
                         border: 1px solid map-get($map: $paleta, $key: "secundario");
+                    }
+                    @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    margin-bottom: 10px;
                     }
                 }
                 .cant {
@@ -267,22 +301,35 @@ body {
                 font-style: $estilo-fuente-p;
             }
             .titu {
-                
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 11px;
+                    }
             }
             .totall {
-
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 11px;
+                    }
             }
         }
         .btns {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-
             button {
                 border: none;
                 font-family: $fuente-principal;
                 font-style: $estilo-fuente-p;
                 font-weight: 500;
                 cursor: pointer;
+                @media only screen and (min-width : 320px) and (max-width : 993px) {
+                    font-size: 15px;
+                    
+                }
             }
             .cerrar {
                 background-color: rgb(77, 77, 77);
@@ -293,6 +340,7 @@ body {
             }
             .finish {
                 background-color: map-get($map: $paleta, $key: "secundario");
+                
                 &:hover {
                     border: 2px solid map-get($map: $paleta, $key: "primario");
                 }
@@ -303,6 +351,15 @@ body {
 .mostrarcarrito {
     .cartTab {
         inset: 103px 0 0 auto;
+    }
+}
+
+.swal-padding-width{
+    background-color: $bg-color-principal;
+    color: map-get($map: $paleta, $key: "primario");
+    border: $borders;
+    .swal2-styled {
+        background-color: map-get($map: $paleta, $key: "secundario");
     }
 }
 
